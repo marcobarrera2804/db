@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Agregar</title>
+
+    <script type="module" src="lib/js/submitForm.js"></script>
+    <script type="module" src="lib/js/muestraError.js"></script>
+
+</head>
+
+<body>
+
+    <form onsubmit="submitForm('srv/pasatiempo-agrega.php', event)
+        .then(modelo => location.href = 'index.html')
+        .catch(muestraError)">
+
+        <h1>Agregar</h1>
+
+        <p><a href="index.html">Cancelar</a></p>
+
+        <p>
+            <label>
+                Nombre *
+                <input name="nombre" required>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Descripción *
+                <textarea name="descripcion" required></textarea>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Categoría *
+                <select name="categoria" required>
+                    <option value="Deporte">Deporte</option>
+                    <option value="Juegos">Juegos</option>
+                    <option value="Arte">Arte</option>
+                    <option value="Ciencia">Ciencia</option>
+                    <option value="Música">Música</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Dificultad *
+                <select name="dificultad" required>
+                    <option value="Fácil">Fácil</option>
+                    <option value="Intermedio" selected>Intermedio</option>
+                    <option value="Difícil">Difícil</option>
+                </select>
+            </label>
+        </p>
+
+        <p>* Obligatorio</p>
+
+        <p><button type="submit">Agregar</button></p>
+
+    </form>
+
+</body>
+
+</html>
